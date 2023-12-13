@@ -1,0 +1,19 @@
+nohup: ignoring input
+2021-09-12 07:34:20.900520: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2021-09-12 07:34:20.900561: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+ ft: False  gamma-MLP: 3  alpha-DIS: 10  mKL: 0.05  Cmi: 300.0  rec: 0.5  c2 10  selfExp: 10  ckpt_dir-save_name: rgbd_cmi300_Newtest
+batch_size:  100
+---------- train ----------
+*********** loading rgbd dataset ************
+[Iter-1/20000], Batch [0/5.0] : loss_MLP1: 1032.88440, loss_MLP2: 1036.09766, loss_KL1: 1.16407, loss_KL2: 1.68768, loss_D1: -1.38832, loss_D2: -1.38708, loss_cmi1: 1.38775, loss_cmi2: 1.38726, loss_rec1: 12288.46973, loss_rec2: 4095.36304
+[Iter-1]: loss_total: 4526.15918, loss_MLP: 1034.49097, loss_D: 1.38770, loss_mkl: 1.42587, loss_cmi: 1.38751, loss_rec: 8191.91650
+Traceback (most recent call last):
+  File "main.py", line 78, in <module>
+    main(args)
+  File "main.py", line 28, in main
+    net.train()
+  File "/home/SIB-MSC_submit/SIB-MSC/solver.py", line 136, in train
+    self.save_checkpoint('best_min')
+  File "/home/SIB-MSC_submit/SIB-MSC/solver.py", line 191, in save_checkpoint
+    netE1_path = "checkpoints/{}/netE1_{}.pth".format(self.save_name, epoch)
+AttributeError: 'Solver' object has no attribute 'save_name'
